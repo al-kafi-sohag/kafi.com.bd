@@ -1,0 +1,12 @@
+# Enable UTF-8 encoding
+AddDefaultCharset UTF-8
+
+# Enable compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Canonical redirect to https://kafi.com.bd/
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.kafi\.com\.bd [NC]
+RewriteRule ^(.*)$ https://kafi.com.bd/$1 [L,R=301] 
